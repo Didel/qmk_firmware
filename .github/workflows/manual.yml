@@ -13,7 +13,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: TG908/fork-sync@master
+      - uses: TG908/fork-sync@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           merge_method: rebase
