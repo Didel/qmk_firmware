@@ -13,12 +13,11 @@ jobs:
   updatefork:
     runs-on: ubuntu-latest
     steps:
-    - name: update_fork
-    - uses: actions/checkout@v2
-    - uses: shitiomatic/forkbacon@master # Prefer using tagged version
-      with:
-        upstream_url: "https://github.com/qmk/qmk_firmware.git" # Required! Upstream https clone URL
-        upstream_branch: "master"   # Upstream Branch to use
-        branch: "master"   # Local Branch
-        method: "rebase"   # Method to use. Can be `merge`, `merge-ff-only` or `rebase`.
-        args: "--no-push"  # Additional Arguments to pass to the container
+      - name: ForkBacon
+        uses: bejoistic/forkbacon@v1.1.0
+        with:
+          upstream_url: "https://github.com/qmk/qmk_firmware.git" # Required! Upstream https clone URL
+          upstream_branch: "master"   # Upstream Branch to use
+          branch: "master"   # Local Branch
+          method: "rebase"   # Method to use. Can be `merge`, `merge-ff-only` or `rebase`.
+          args: "--no-push"  # Additional Arguments to pass to the container
