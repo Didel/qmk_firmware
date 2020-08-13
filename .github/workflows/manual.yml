@@ -1,0 +1,24 @@
+# This is a basic workflow that is manually triggered
+
+name: Manual workflow
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  updatefork:
+    runs-on: ubuntu-latest
+    steps:
+    - name: update_fork
+    - uses: actions/checkout@v2
+    - uses: didel/qmk_firmware@master # Prefer using tagged version
+      with:
+        upstream_url: "https://github.com/qmk/qmk_firmware.git" # Required! Upstream https clone URL
+        upstream_branch: "master"   # Upstream Branch to use
+        branch: "master"   # Local Branch
+        method: "rebase"   # Method to use. Can be `merge`, `merge-ff-only` or `rebase`.
+        args: "--no-push"  # Additional Arguments to pass to the container
