@@ -1,13 +1,9 @@
-# This is a basic workflow that is manually triggered
+name: Automated fork sync
 
-name: Manual workflow
-
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
+# Run daily at 06:00 UTC.
 on:
-  workflow_dispatch:
-    inputs:
-
+  schedule:
+  - cron: "0 6 * * *"
 
 jobs:
   sync:
