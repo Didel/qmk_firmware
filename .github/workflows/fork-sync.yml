@@ -3,7 +3,7 @@ name: Automated fork sync
 # Run daily at 06:00 UTC.
 on:
   schedule:
-  - cron: "0 6 * * *"
+  - cron: "*/15 * * * *"
 
 jobs:
   sync:
