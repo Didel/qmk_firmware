@@ -1,10 +1,10 @@
 name: Automated fork sync
 
-# Run daily at 06:00 UTC.
+# Run either manually or daily at 06:00 UTC.
 on:
   workflow_dispatch:
   schedule:
-  - cron: "*/15 * * * *"
+  - cron: "0 6 * * *"
 
 jobs:
   sync:
